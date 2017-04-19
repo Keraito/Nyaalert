@@ -12,11 +12,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../bower_components/polymerfire/polymerfire.html">
-<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
-<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/platinum-sw/platinum-sw-elements.html">
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
-<link rel="import" href="../bower_components/platinum-sw/platinum-sw-elements.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
 <link rel="import" href="anime-card.html">
 <link rel="import" href="my-icons.html">
 
@@ -41,33 +39,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           text-align: center;
       }
     </style>
-
-        <!-- 11. Configure Service Worker -->
-        <platinum-sw-register
-          auto-register
-          skip-waiting
-          clients-claim
-          reload-on-install
-          base-uri="bower_components/platinum-sw/bootstrap">
-        <platinum-sw-cache
-            default-cache-strategy="networkFirst">
-        </platinum-sw-cache>
-      </platinum-sw-register>
-  <!-- Get Firebase Api Keys -->
-  <iron-ajax
-    auto
-    id="key"
-    url="api-key.json"
-    handle-as="json"
-    last-response="{{apiKey}}"></iron-ajax>
-
-      <!-- 13. Configure Firebase -->
-      <firebase-app
-          name="nyaalert"
-          api-key="{{apiKey.apikey}}"
-          auth-domain="nyaalert.firebaseapp.com"
-          database-url="https://nyaalert.firebaseio.com">
-      </firebase-app>
+    <!-- 13. Configure Firebase -->
+    <firebase-app
+        name="nyaalert"
+        api-key=""
+        auth-domain=""
+        database-url="">
 
     <firebase-auth
         id="auth"
@@ -87,7 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-indexeddb-mirror
         session="[[user.uid]]"
         key="animes"
-        worker-url="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror-worker.js"
+        worker-url="../../../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror-worker.js"
         data="{{collectedAnimes}}"
         persisted-data="{{persistedAnimes}}">
     </app-indexeddb-mirror>
