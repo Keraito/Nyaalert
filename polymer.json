@@ -11,6 +11,9 @@
     "bower_components/webcomponentsjs/webcomponents-lite.min.js",
     "bower_components/platinum-sw/service-worker.js",
     "bower_components/app-storage/app-indexeddb-mirror/*.js",
-    "bower_components/app-storage/app-indexeddb-mirror/common-worker-scope.js"
+    "bower_components/app-storage/app-indexeddb-mirror/common-worker-scope.js",
+    "sw-import.js",
+    "bower_components/platinum-sw/bootstrap/*",
+    "bower_components/sw-toolbox/sw-toolbox.js"
   ]
 }
