@@ -85,16 +85,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           onload();
         }
       })();
+
+        // Load pre-caching Service Worker
+        // if ('serviceWorker' in navigator) {
+        //   window.addEventListener('load', function() {
+        //     navigator.serviceWorker.register('/service-worker.js');
+        //   });
+        // }
     </script>
 
     <!-- Import my own application -->
-    <link rel="import" href="/src/nyaalert-app.html">
+    <link rel="import" href="src/nyaalert-app.html">
 
     <!-- 10. App Dependencies -->
     <!-- <script src="bower_components/web-animations-js/web-animations.min.js"></script> -->
-    <link rel="import" href="bower_components/platinum-sw/platinum-sw-elements.html">
-    <link rel="import" href="bower_components/polymerfire/firebase-app.html">
-    <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
 
     <style>
       body {
@@ -107,31 +111,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
   </head>
   <body>
-      <!-- 11. Configure Service Worker -->
-      <platinum-sw-register
-        auto-register
-        skip-waiting
-        clients-claim
-        reload-on-install
-        href="sw-import.js">
-      <platinum-sw-cache
-          default-cache-strategy="networkFirst">
-      </platinum-sw-cache>
-    </platinum-sw-register>
-    <!-- Get Firebase Api Keys -->
-    <iron-ajax
-      auto
-      id="key"
-      url="api-key.json"
-      handle-as="json"
-      last-response="{{apiKey}}"></iron-ajax>
-    <!-- 13. Configure Firebase -->
-    <firebase-app
-        name="nyaalert"
-        api-key="{{apiKey.apikey}}"
-        auth-domain="nyaalert.firebaseapp.com"
-        database-url="https://nyaalert.firebaseio.com">
-    </firebase-app>
     <nyaalert-app></nyaalert-app>
     <!-- Built with love using Polymer Starter Kit -->
   </body>

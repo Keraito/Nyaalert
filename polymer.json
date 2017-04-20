@@ -1,13 +1,19 @@
 {
   "entrypoint": "index.html",
   "shell": "src/nyaalert-app.html",
-  "sourceGlobs": [
+  "sources": [
     "src/**/*",
     "images/**/*",
     "bower.json"
   ],
-  "includeDependencies": [
+  "extraDependencies": [
     "manifest.json",
-    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js",
+    "bower_components/platinum-sw/service-worker.js",
+    "bower_components/app-storage/app-indexeddb-mirror/*.js",
+    "bower_components/app-storage/app-indexeddb-mirror/common-worker-scope.js",
+    "sw-import.js",
+    "bower_components/platinum-sw/bootstrap/*",
+    "bower_components/sw-toolbox/sw-toolbox.js"
   ]
 }
