@@ -99,6 +99,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <!-- 10. App Dependencies -->
     <!-- <script src="bower_components/web-animations-js/web-animations.min.js"></script> -->
+    <link rel="import" href="bower_components/platinum-sw/platinum-sw-elements.html">
 
     <style>
       body {
@@ -111,6 +112,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
   </head>
   <body>
+      <!-- 11. Configure Service Worker -->
+      <platinum-sw-register
+        auto-register
+        skip-waiting
+        clients-claim
+        reload-on-install
+        base-uri="bower_components/platinum-sw/bootstrap">
+      <platinum-sw-cache
+          default-cache-strategy="networkFirst">
+      </platinum-sw-cache>
+    </platinum-sw-register>
     <nyaalert-app></nyaalert-app>
     <!-- Built with love using Polymer Starter Kit -->
   </body>
