@@ -2,3 +2,6 @@ bower_components/
 build/
 node_modules/
 api-key.json
+.firebaserc
+database.rules.json
+firebase.json
